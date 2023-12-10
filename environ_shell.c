@@ -2,7 +2,7 @@
 
 /**
  * _myenv - function that prints the current environment
- * @info: Struct conaining potential argument
+ * @info: Struct conaining potential argument.
  * Return: 0
  */
 
