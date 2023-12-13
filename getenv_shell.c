@@ -26,13 +26,13 @@ char **get_environ(info_t *info)
 
 int _unsetenv(info_t *info, char *var)
 {
+	char *ptr;
+
 	list_t *node = info->env;
 
 	size_t a;
 
 	a = 0;
-
-	char *ptr;
 
 	if (!node || !var)
 		return (0);

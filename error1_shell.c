@@ -8,11 +8,12 @@
 
 int _erratoi(char *s)
 {
+	unsigned long int output = 0;
+
 	int num;
 
 	num = 0;
 
-	unsigned long int output = 0;
 
 	if (*s == '+')
 		s++;  /* TODO: why does this make main return 255? */

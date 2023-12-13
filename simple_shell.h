@@ -104,8 +104,26 @@ typedef struct passinforma
 } info_t;
 
 #define INFO_INIT \
-{NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
-	0, 0, 0}
+{ \
+    0,       /* err_num */ \
+    0,       /* linecount_flag */ \
+    NULL,    /* fname */ \
+    NULL,    /* env */ \
+    NULL,    /* history */ \
+    NULL,    /* arg */ \
+    NULL,    /* argv */ \
+    NULL,    /* path */ \
+    0,       /* argc */ \
+    0,       /* line_count */ \
+    NULL,    /* alias */ \
+    NULL,    /* environ */ \
+    0,       /* env_changed */ \
+    0,       /* status */ \
+    NULL,    /* cmd_buf */ \
+    0,       /* cmd_buf_type */ \
+    0,       /* readfd */ \
+    0        /* histcount */ \
+}
 
 /**
  *struct builting - struct contains a builtin string and related function

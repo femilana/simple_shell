@@ -60,7 +60,7 @@ int find_builtin(info_t *info)
 		{"exit", _myexit},
 		{"env", _myenv},
 		{"help", _myhelp},
-		{"history", _myhistory},
+		{"history", myhistory},
 		{"setenv", _mysetenv},
 		{"unsetenv", _myunsetenv},
 		{"cd", _mycd},
@@ -86,7 +86,7 @@ int find_builtin(info_t *info)
 void find_cmd(info_t *info)
 {
 	char *path = NULL;
-	int a = 0, b = 0;
+	int a, b;
 
 	info->path = info->argv[0];
 	if (info->linecount_flag == 1)
@@ -94,9 +94,13 @@ void find_cmd(info_t *info)
 		info->line_count++;
 		info->linecount_flag = 0;
 	}
-	for (a, b; info->arg[a]; a++)
+	for (a = 0, b = 0; info->arg[a]; a++)
+	{
 		if (!is_delim(info->arg[a], " \t\n"))
+		{
 			b++;
+		}
+	}
 	if (!b)
 		return;
 
